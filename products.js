@@ -3,7 +3,8 @@ window.PRODUCTS = [
     name: "Produto Premium 01",
     subtitle: "Seleção principal",
     price: "R$ 0.000,00",
-    note: "Texto curto para apresentar o produto sem poluir a composição.",
+    installment: "ou em até 12x no cartão",
+    note: "Uma apresentação limpa, com foco total no produto e na percepção de valor.",
     image: "assets/products/produto-01.png",
     accent: "green"
   },
@@ -11,7 +12,8 @@ window.PRODUCTS = [
     name: "Produto Premium 02",
     subtitle: "Linha exclusiva",
     price: "R$ 0.000,00",
-    note: "Troque imagem, nome, preço e descrição diretamente neste arquivo.",
+    installment: "condições especiais sob consulta",
+    note: "Troque imagem, nome, preço e descrição diretamente no arquivo products.js.",
     image: "assets/products/produto-02.png",
     accent: "violet"
   },
@@ -19,7 +21,8 @@ window.PRODUCTS = [
     name: "Produto Premium 03",
     subtitle: "Edição especial",
     price: "R$ 0.000,00",
-    note: "Use imagens com fundo transparente para um resultado mais sofisticado.",
+    installment: "pagamento à vista ou parcelado",
+    note: "Imagens em PNG transparente produzem o melhor resultado durante a rotação.",
     image: "assets/products/produto-03.png",
     accent: "gold"
   },
@@ -27,7 +30,8 @@ window.PRODUCTS = [
     name: "Produto Premium 04",
     subtitle: "Linha selecionada",
     price: "R$ 0.000,00",
-    note: "Cada item recebe uma entrada diferente conforme a rolagem.",
+    installment: "fale com a equipe para condições",
+    note: "Cada item possui uma rotação própria controlada pela rolagem.",
     image: "assets/products/produto-04.png",
     accent: "cyan"
   }

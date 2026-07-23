@@ -1,4 +1,8 @@
 const clamp=(n,min,max)=>Math.min(Math.max(n,min),max);
+
+function formatWeight(value){
+  return value.toFixed(1).replace(".",",");
+}
 const progressBar=document.getElementById("progressBar");
 const productsRoot=document.getElementById("produtos");
 
@@ -69,6 +73,19 @@ function update(){
   if(device && hero){
     const p=sectionProgress(hero);
     device.style.transform=`translate(-50%,-50%) rotateX(${58-p*17}deg) rotateZ(${-4+p*5}deg) scale(${1+p*.05})`;
+
+    // Contagem visual sincronizada exclusivamente com a rolagem do hero.
+    const startWeight=112.8;
+    const endWeight=84.6;
+    const smooth=0.5-0.5*Math.cos(Math.PI*p);
+    const currentWeight=startWeight-(startWeight-endWeight)*smooth;
+    const weightNumber=document.getElementById("weightNumber");
+    const weightTrackFill=document.getElementById("weightTrackFill");
+    const weightMarker=document.getElementById("weightMarker");
+
+    if(weightNumber) weightNumber.textContent=formatWeight(currentWeight);
+    if(weightTrackFill) weightTrackFill.style.width=`${smooth*100}%`;
+    if(weightMarker) weightMarker.style.left=`${smooth*100}%`;
   }
 
   document.querySelectorAll(".product").forEach(section=>{

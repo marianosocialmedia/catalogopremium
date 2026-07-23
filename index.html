@@ -47,10 +47,28 @@
       <div class="hero-device">
         <div class="device-glow"></div>
         <div class="device-frame">
-          <div class="device-screen">
-            <span class="device-eyebrow">SELEÇÃO CURADA</span>
-            <strong>MONJAROS</strong>
-            <small>CATÁLOGO 01</small>
+          <div class="device-screen scale-screen" aria-label="Indicador visual de peso controlado pela rolagem">
+            <div class="scale-header">
+              <span class="device-eyebrow">EVOLUÇÃO VISUAL</span>
+              <span class="scale-status"><i></i> SCROLL ATIVO</span>
+            </div>
+
+            <div class="weight-readout">
+              <span class="weight-number" id="weightNumber">112,8</span>
+              <span class="weight-unit">kg</span>
+            </div>
+
+            <div class="weight-track" aria-hidden="true">
+              <div class="weight-track-fill" id="weightTrackFill"></div>
+              <div class="weight-marker" id="weightMarker"></div>
+            </div>
+
+            <div class="weight-footer">
+              <span>INÍCIO <strong>112,8 kg</strong></span>
+              <span>PROJEÇÃO <strong>84,6 kg</strong></span>
+            </div>
+
+            <small class="scale-caption">ROLE PARA ACOMPANHAR A CONTAGEM</small>
           </div>
         </div>
       </div>

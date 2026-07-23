@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#070707" />
+  <title>Monjaros — Catálogo Conceitual</title>
+  <meta name="description" content="Protótipo conceitual de catálogo premium com rolagem dirigida." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+  <header class="topbar">
+    <a href="#inicio" class="brand" aria-label="Ir para o início">MONJAROS<span>®</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir catálogo">CATÁLOGO</button>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-copy">
+        <p class="eyebrow">CATÁLOGO PRIVADO — EDIÇÃO 01</p>
+        <h1>Escolher bem também<br><em>é uma forma de poder.</em></h1>
+        <p class="hero-sub">Uma experiência guiada para conhecer uma seleção conceitual de produtos.</p>
+      </div>
+
+      <div class="ampoule-stage" aria-hidden="true">
+        <div class="ampoule" id="ampoule">
+          <div class="ampoule-cap"></div>
+          <div class="ampoule-neck"></div>
+          <div class="ampoule-body">
+            <div class="ampoule-liquid"></div>
+            <div class="ampoule-glare"></div>
+          </div>
+          <div class="ampoule-bottom"></div>
+        </div>
+        <div class="hero-shadow" id="heroShadow"></div>
+      </div>
+
+      <div class="scroll-hint">
+        <span>Role para atravessar</span>
+        <i></i>
+      </div>
+    </section>
+
+    <section class="fall-zone" id="queda" aria-label="Transição visual">
+      <div class="horizon"></div>
+      <div class="fall-copy">
+        <p>ACIMA, O DESEJO.</p>
+        <h2>ABAIXO,<br> A ESCOLHA.</h2>
+      </div>
+      <div class="impact-ring" id="impactRing"></div>
+    </section>
+
+    <section class="dark-intro" id="catalogo">
+      <div class="intro-sticky">
+        <p class="eyebrow light">SELEÇÃO CURADA</p>
+        <h2>Nem tudo precisa<br>ser mostrado de uma vez.</h2>
+        <p>Desça. Observe. Compare. Cada produto entra no seu próprio tempo.</p>
+      </div>
+    </section>
+
+    <section class="products">
+      <article class="product product-a" data-index="01">
+        <div class="product-sticky">
+          <div class="product-copy">
+            <span class="product-number">01 / 04</span>
+            <p class="product-kicker">PRECISÃO</p>
+            <h3>Orbe One</h3>
+            <p class="product-desc">Um produto fictício criado para demonstrar a experiência visual do catálogo.</p>
+            <div class="product-meta">
+              <span>Apresentação conceitual</span>
+              <span>Edição limitada</span>
+            </div>
+            <a href="#produto-2" class="ghost-btn">Continuar</a>
+          </div>
+          <div class="product-visual">
+            <div class="orbital orbital-a"></div>
+            <div class="fictional-pack pack-a">
+              <span class="pack-brand">MONJAROS</span>
+              <strong>ORBE</strong>
+              <small>ONE / CONCEPT 01</small>
+            </div>
+            <div class="fictional-vial vial-a">
+              <span>O</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="product product-b" id="produto-2" data-index="02">
+        <div class="product-sticky reverse">
+          <div class="product-copy">
+            <span class="product-number">02 / 04</span>
+            <p class="product-kicker">EQUILÍBRIO</p>
+            <h3>Nox 15</h3>
+            <p class="product-desc">Linhas escuras, reflexos metálicos e uma presença mais intensa.</p>
+            <div class="product-meta">
+              <span>Design conceitual</span>
+              <span>Visual premium</span>
+            </div>
+            <a href="#produto-3" class="ghost-btn">Continuar</a>
+          </div>
+          <div class="product-visual">
+            <div class="orbital orbital-b"></div>
+            <div class="fictional-pack pack-b">
+              <span class="pack-brand">MONJAROS</span>
+              <strong>NOX</strong>
+              <small>15 / CONCEPT 02</small>
+            </div>
+            <div class="fictional-vial vial-b">
+              <span>N</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="product product-c" id="produto-3" data-index="03">
+        <div class="product-sticky">
+          <div class="product-copy">
+            <span class="product-number">03 / 04</span>
+            <p class="product-kicker">CLAREZA</p>
+            <h3>Vetra Gold</h3>
+            <p class="product-desc">Uma composição clara e sofisticada para criar contraste dentro do ambiente dark.</p>
+            <div class="product-meta">
+              <span>Produto demonstrativo</span>
+              <span>Sem finalidade comercial</span>
+            </div>
+            <a href="#produto-4" class="ghost-btn">Continuar</a>
+          </div>
+          <div class="product-visual">
+            <div class="orbital orbital-c"></div>
+            <div class="fictional-pack pack-c">
+              <span class="pack-brand">MONJAROS</span>
+              <strong>VETRA</strong>
+              <small>GOLD / CONCEPT 03</small>
+            </div>
+            <div class="fictional-vial vial-c">
+              <span>V</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="product product-d" id="produto-4" data-index="04">
+        <div class="product-sticky reverse">
+          <div class="product-copy">
+            <span class="product-number">04 / 04</span>
+            <p class="product-kicker">MOVIMENTO</p>
+            <h3>Linea Pen</h3>
+            <p class="product-desc">Um formato alongado que permite explorar rotações, aproximações e mudanças de perspectiva.</p>
+            <div class="product-meta">
+              <span>Mockup fictício</span>
+              <span>Interação por rolagem</span>
+            </div>
+            <a href="#final" class="ghost-btn">Finalizar</a>
+          </div>
+          <div class="product-visual">
+            <div class="orbital orbital-d"></div>
+            <div class="fictional-pen">
+              <span class="pen-logo">M</span>
+              <span class="pen-label">LINEA 10</span>
+              <i></i>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="finale" id="final">
+      <div class="final-glow"></div>
+      <p class="eyebrow light">FIM DA EXPERIÊNCIA</p>
+      <h2>A escolha agora<br><em>é sua.</em></h2>
+      <p>Protótipo visual com produtos completamente fictícios.</p>
+      <a class="primary-btn" href="#inicio">Recomeçar experiência</a>
+      <small>MONJAROS® — PROJETO CONCEITUAL</small>
+    </section>
+  </main>
+
+  <aside class="catalog-drawer" id="catalogDrawer" aria-hidden="true">
+    <button id="closeDrawer" aria-label="Fechar catálogo">FECHAR</button>
+    <nav>
+      <a href="#inicio">Abertura <span>00</span></a>
+      <a href="#catalogo">Manifesto <span>01</span></a>
+      <a href="#produto-2">Nox 15 <span>02</span></a>
+      <a href="#produto-3">Vetra Gold <span>03</span></a>
+      <a href="#produto-4">Linea Pen <span>04</span></a>
+    </nav>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>

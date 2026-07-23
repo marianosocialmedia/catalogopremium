@@ -2,7 +2,11 @@ const clamp=(n,min,max)=>Math.min(Math.max(n,min),max);
 const progressBar=document.getElementById("progressBar");
 const productsRoot=document.getElementById("produtos");
 
-function esc(value=""){return String(value).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\\"":"&quot;","'":"&#039;"}[m]));}
+function esc(value=""){
+  return String(value).replace(/[&<>"']/g,m=>({
+    "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"
+  }[m]));
+}
 
 function renderProducts(){
   const products=window.PRODUCTS||[];
@@ -16,11 +20,14 @@ function renderProducts(){
             <p class="product-kicker">${esc(p.subtitle)}</p>
             <h3>${esc(p.name)}</h3>
             <p class="product-price">${esc(p.price)}</p>
+            <p class="product-installment">${esc(p.installment||"")}</p>
             <p class="product-note">${esc(p.note)}</p>
             <span class="product-tag">SELEÇÃO MONJAROS</span>
           </div>
+
           <div class="product-visual">
             <div class="product-glow accent-${esc(p.accent)}"></div>
+            <div class="product-stage-ring"></div>
             <div class="product-img-wrap">
               <img class="product-img" src="${esc(p.image)}" alt="${esc(p.name)}" loading="lazy">
               <div class="image-placeholder">
@@ -29,6 +36,10 @@ function renderProducts(){
               </div>
             </div>
           </div>
+
+          <div class="product-scroll-label">
+            <span>Role para girar</span><i></i>
+          </div>
         </div>
       </article>`;
   }).join("");
@@ -36,7 +47,10 @@ function renderProducts(){
   document.querySelectorAll(".product-img").forEach(img=>{
     const placeholder=img.nextElementSibling;
     img.addEventListener("load",()=>placeholder.style.display="none");
-    img.addEventListener("error",()=>{img.style.display="none";placeholder.style.display="flex"});
+    img.addEventListener("error",()=>{
+      img.style.display="none";
+      placeholder.style.display="flex";
+    });
   });
 }
 renderProducts();
@@ -61,10 +75,30 @@ function update(){
     const p=sectionProgress(section);
     const wrap=section.querySelector(".product-img-wrap");
     const glow=section.querySelector(".product-glow");
-    if(wrap) wrap.style.transform=`rotateY(${-12+p*24}deg) rotateX(${5-p*8}deg) translateY(${(p-.5)*-18}px) scale(${.93+p*.08})`;
+    const ring=section.querySelector(".product-stage-ring");
+    const copy=section.querySelector(".product-copy");
+
+    // Durante a área sticky, a rolagem "trava" o painel e usa o avanço para girar o produto.
+    const eased=0.5-0.5*Math.cos(Math.PI*p);
+    const rotation=-34 + eased*68;
+    const tilt=8-Math.sin(eased*Math.PI)*12;
+    const scale=.92+Math.sin(eased*Math.PI)*.1;
+    const floatY=Math.sin(eased*Math.PI*2)*-10;
+
+    if(wrap){
+      wrap.style.transform=
+        `rotateY(${rotation}deg) rotateX(${tilt}deg) translateY(${floatY}px) scale(${scale})`;
+    }
     if(glow){
-      glow.style.transform=`scale(${.86+p*.2})`;
-      glow.style.opacity=String(.25+Math.sin(p*Math.PI)*.6);
+      glow.style.transform=`scale(${.84+Math.sin(eased*Math.PI)*.22})`;
+      glow.style.opacity=String(.22+Math.sin(eased*Math.PI)*.42);
+    }
+    if(ring){
+      ring.style.transform=`rotateX(70deg) rotateZ(${eased*38}deg) scale(${.96+Math.sin(eased*Math.PI)*.05})`;
+    }
+    if(copy){
+      copy.style.transform=`translateY(${(eased-.5)*-14}px)`;
+      copy.style.opacity=String(.68+Math.sin(eased*Math.PI)*.32);
     }
   });
 }
